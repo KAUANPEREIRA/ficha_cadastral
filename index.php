@@ -1,21 +1,6 @@
 
-<?php
-
-$nome="João Silva";
-$idade=22;
-$sexo="M";
-$salario= 10000.00;
-$salarioAnual=null;
-$statusEmprego = true;
-$estaEmpregado= null;
-$habilidades=["PHP", "JavaScript", "HTML", "CSS"];
-
-if($statusEmprego){
-    $estaEmpregado = 'Empregado';
-}else{
-     $estaEmpregado = 'Desempregado';
-}
-?>
+<?php include('inc/dados.php')?>
+<?php include('funcoes/index.php')?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -71,8 +56,8 @@ if($statusEmprego){
             <p>Nome: <strong><?= $nome?> </strong></p>
             <p>Idade: <strong><?= $idade?></strong></p>
             <p>Sexo: <strong><?= $sexo?></strong></p>
-            <p>Salário Mensal:<strong> R$ <?= number_format($salario,2,'.',',')?></strong></strong></p>
-            <p>Salário Anual: <strong> R$ <?= number_format($salario*12 ,2,'.' ,',')?></strong></p>
+            <p>Salário Mensal:<strong> R$ <?= converterSalario($salario);?></strong></strong></p>
+            <p>Salário Anual: <strong> R$  <?= converterSalario($salario * 12);?></strong></p>
             <p>Status de Emprego: <strong><?= $estaEmpregado?></strong></p>
             <p>Habilidades: <strong><?= implode(',',$habilidades)?></strong></p>
         </div>
